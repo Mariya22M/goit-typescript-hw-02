@@ -1,0 +1,7 @@
+/* src/components/ErrorMessage/ErrorMessage.module.css */
+.errorText {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
