@@ -1,0 +1,47 @@
+.header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    padding: 5px;
+    background-color: blueviolet;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 100%;
+    max-width: 500px;
+}
+
+.input_form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 5px;
+    background-color: #f1f3f4;
+    border-radius: 8px;
+}
+
+.input {
+    flex-grow: 1;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.button {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button:hover .search_icon {
+    color: blueviolet;
+}
