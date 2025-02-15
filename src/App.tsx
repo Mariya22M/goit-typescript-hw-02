@@ -10,12 +10,14 @@ import axios from "axios";
 import { Toaster } from "react-hot-toast";
 import "./App.css";
 
+// Тип для зображення
 interface Image {
   id: string;
   urls: { small: string; regular: string };
   alt_description: string | null;
 }
 
+// Тип для відповіді від API Unsplash
 interface UnsplashApiResponse {
   results: Image[];
   total: number;
@@ -23,13 +25,13 @@ interface UnsplashApiResponse {
 }
 
 const App: React.FC = () => {
-  const [articles, setArticles] = useState<Image[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [isError, setIsError] = useState<boolean>(false);
-  const [page, setPage] = useState<number>(1);
-  const [query, setQuery] = useState<string>("");
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedImage, setSelectedImage] = useState<Image | null>(null);
+  const [articles, setArticles] = useState<Image[]>([]); // Массив для зображень
+  const [isLoading, setIsLoading] = useState<boolean>(false); // Стан для лоадера
+  const [isError, setIsError] = useState<boolean>(false); // Стан для помилки
+  const [page, setPage] = useState<number>(1); // Стан для сторінки
+  const [query, setQuery] = useState<string>(""); // Стан для пошукового запиту
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // Стан для модалки
+  const [selectedImage, setSelectedImage] = useState<Image | null>(null); // Стан для вибраного зображення
 
   useEffect(() => {
     if (!query) return;
@@ -42,7 +44,7 @@ const App: React.FC = () => {
           "https://api.unsplash.com/search/photos",
           {
             params: {
-              client_id: "QMDTanrFRxmDZa0TOSP83SoJlYeOIIQjN5BoN10efLM",
+              client_id: "QMDTanrFRxmDZa0TOSP83SoJlYeOIIQjN5BoN10efLM", // Замість цього треба використовувати ваш API ключ
               per_page: 9,
               page: page,
               query: query,
